@@ -1,20 +1,69 @@
+use_default_settings: true
+
 server:
   port: 8080
   bind_address: "0.0.0.0"
-  secret_key: "your-secret-here"
+  secret_key: "aria-jaila-deepsearch-2026"
+  limiter: false
+  image_proxy: false
 
 search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: "en"
   formats:
     - html
     - json
+
+outgoing:
+  request_timeout: 6.0
+  max_request_timeout: 10.0
+  pool_connections: 100
+  pool_maxsize: 20
+  enable_http2: true
 
 engines:
   - name: google
     engine: google
     shortcut: go
+    disabled: false
+
   - name: bing
     engine: bing
     shortcut: bi
+    disabled: false
+
   - name: duckduckgo
     engine: duckduckgo
     shortcut: dd
+    disabled: false
+
+  - name: brave
+    engine: brave
+    shortcut: br
+    disabled: false
+
+  - name: arxiv
+    engine: arxiv
+    shortcut: arx
+    disabled: false
+
+  - name: pubmed
+    engine: pubmed
+    shortcut: pub
+    disabled: false
+
+  - name: reddit
+    engine: reddit
+    shortcut: re
+    disabled: false
+
+  - name: stackoverflow
+    engine: stackoverflow
+    shortcut: so
+    disabled: false
+
+  - name: github
+    engine: github
+    shortcut: gh
+    disabled: false
